@@ -136,7 +136,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mCurrLocationMarker = mMap.addMarker(markerOptions);
 
         //move map camera
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+        float zoomLevel = (float) 16.0; //This goes up to 21 and down to 2
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoomLevel));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
 
         //stop location updates
