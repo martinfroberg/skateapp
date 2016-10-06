@@ -1,14 +1,14 @@
 package com.rulletrippen.rulletrippen;
 
+import com.rulletrippen.rulletrippen.fragments.*;
+import com.rulletrippen.rulletrippen.database.FetchFromDatabase;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-
-import com.rulletrippen.rulletrippen.database.FetchFromDatabase;
 
 public class MainActivity extends FragmentActivity {
 
@@ -32,11 +32,12 @@ public class MainActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int pos) {
-            pos = pos % 2;
+            pos = pos % 3;
 
             switch(pos) {
-                case 0: return FirstFragment.newInstance();
-                case 1: return SecondFragment.newInstance();
+                case 0: return RoutesFragment.newInstance();
+                case 1: return ProfileFragment.newInstance();
+                case 2: return SettingsFragment.newInstance();
                 default: return null;
             }
         }

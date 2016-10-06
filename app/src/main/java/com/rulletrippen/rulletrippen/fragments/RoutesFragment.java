@@ -1,4 +1,4 @@
-package com.rulletrippen.rulletrippen;
+package com.rulletrippen.rulletrippen.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,20 +6,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class SecondFragment extends Fragment {
+import com.rulletrippen.rulletrippen.R;
 
-    public SecondFragment() {
+public class RoutesFragment extends Fragment {
+
+    public RoutesFragment() {
         // Required empty public constructor
     }
 
-    public static SecondFragment newInstance() {
-        SecondFragment fragment = new SecondFragment();
+    public static RoutesFragment newInstance() {
+        RoutesFragment fragment = new RoutesFragment();
         return fragment;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_second, container, false);
+        return inflater.inflate(R.layout.fragment_routes, container, false);
     }
 
 }
