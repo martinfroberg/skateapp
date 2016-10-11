@@ -24,4 +24,7 @@ public class ProfileFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 
+    private void displayRoute(String routeName, String eta, int points, int metersToStart){
+
+    }
 }
