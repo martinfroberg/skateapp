@@ -28,9 +28,9 @@ public class RoutesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_routes, container, false);
 
-        TextView txt = (TextView) rootView.findViewById(R.id.testText);
+        /*TextView txt = (TextView) rootView.findViewById(R.id.testText);
         int page = getArguments().getInt(ARG_PAGE_NUMBER, -1);
-        txt.setText(String.format("Page %d", page));
+        txt.setText(String.format("Page %d", page));*/
 
         return rootView;
     }

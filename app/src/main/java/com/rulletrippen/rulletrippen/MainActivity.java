@@ -37,7 +37,12 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int pos) {
-            return RoutesFragment.newInstance(pos + 1);
+            switch(pos){
+                case 0: return RoutesFragment.newInstance(pos + 1);
+                case 1: return ProfileFragment.newInstance(pos + 1);
+                case 2: return SettingsFragment.newInstance(pos + 1);
+                default: return null;
+            }
         }
         @Override
         public int getCount(){
@@ -46,7 +51,12 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public CharSequence getPageTitle(int pos){
-            return "Tab " + (pos + 1);
+            switch(pos){
+                case 0: return "Routes";
+                case 1: return "Profile";
+                case 2: return "Settings";
+                default: return "Error";
+            }
         }
     }
 }
