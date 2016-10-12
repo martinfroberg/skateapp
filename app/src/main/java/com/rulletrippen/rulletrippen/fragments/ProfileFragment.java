@@ -9,17 +9,13 @@ import android.view.ViewGroup;
 import com.rulletrippen.rulletrippen.R;
 
 public class ProfileFragment extends Fragment {
-    private static final String ARG_PAGE_NUMBER = "page_number";
 
     public ProfileFragment() {
         // Required empty public constructor
     }
 
-    public static ProfileFragment newInstance(int page) {
+    public static ProfileFragment newInstance() {
         ProfileFragment fragment = new ProfileFragment();
-        Bundle args = new Bundle();
-        args.putInt(ARG_PAGE_NUMBER, page);
-        fragment.setArguments(args);
         return fragment;
     }
 

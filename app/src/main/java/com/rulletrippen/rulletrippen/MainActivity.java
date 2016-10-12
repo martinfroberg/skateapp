@@ -1,7 +1,6 @@
 package com.rulletrippen.rulletrippen;
 
 import com.rulletrippen.rulletrippen.fragments.*;
-import com.rulletrippen.rulletrippen.database.FetchFromDatabase;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -10,7 +9,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends FragmentActivity {
 
@@ -22,11 +20,9 @@ public class MainActivity extends FragmentActivity {
         TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
         ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
         pager.setAdapter(new AppPagerAdapter(getSupportFragmentManager()));
-
         tabs.setupWithViewPager(pager);
 
-
-        //new FetchFromDatabase(this);
+        //new HttpDatabase(this);
     }
 
     private class AppPagerAdapter extends FragmentPagerAdapter {
@@ -38,9 +34,9 @@ public class MainActivity extends FragmentActivity {
         @Override
         public Fragment getItem(int pos) {
             switch(pos){
-                case 0: return RoutesFragment.newInstance(pos + 1);
-                case 1: return ProfileFragment.newInstance(pos + 1);
-                case 2: return SettingsFragment.newInstance(pos + 1);
+                case 0: return RoutesFragment.newInstance();
+                case 1: return ProfileFragment.newInstance();
+                case 2: return SettingsFragment.newInstance();
                 default: return null;
             }
         }

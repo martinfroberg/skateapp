@@ -23,10 +23,10 @@ import java.net.URL;
  * Created by Martin-PC on 2016-10-04.
  */
 
-public class FetchFromDatabase extends AsyncTask<String, Void, String> {
+public class HttpDatabase extends AsyncTask<String, Void, String> {
     public MainActivity MainActivity;
 
-    public FetchFromDatabase(MainActivity ma){
+    public HttpDatabase(MainActivity ma){
         MainActivity = ma;
 
         //this.execute("http://localhost/rulletrippen/test.php");
@@ -77,8 +77,8 @@ public class FetchFromDatabase extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String result) {
 
-        TextView tt = (TextView) MainActivity.findViewById(R.id.testText);
-        tt.setText(result);
+        /*TextView tt = (TextView) MainActivity.findViewById(R.id.testText);
+        tt.setText(result);*/
 
         //System.gc();
     }

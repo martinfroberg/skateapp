@@ -10,17 +10,18 @@ import android.widget.TextView;
 import com.rulletrippen.rulletrippen.R;
 
 public class RoutesFragment extends Fragment {
-    private static final String ARG_PAGE_NUMBER = "page_number";
 
     public RoutesFragment() {
         // Required empty public constructor
     }
 
-    public static RoutesFragment newInstance(int page) {
+    public static RoutesFragment newInstance(String[] routeInfo) {
         RoutesFragment fragment = new RoutesFragment();
-        Bundle args = new Bundle();
-        args.putInt(ARG_PAGE_NUMBER, page);
-        fragment.setArguments(args);
+        return fragment;
+    }
+
+    public static RoutesFragment newInstance() {
+        RoutesFragment fragment = new RoutesFragment();
         return fragment;
     }
 
