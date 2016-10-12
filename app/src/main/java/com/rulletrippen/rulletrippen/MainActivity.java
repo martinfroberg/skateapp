@@ -4,22 +4,27 @@ import com.rulletrippen.rulletrippen.fragments.*;
 import com.rulletrippen.rulletrippen.database.FetchFromDatabase;
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
         ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
         pager.setAdapter(new AppPagerAdapter(getSupportFragmentManager()));
-        pager.setCurrentItem((int)(Integer.MAX_VALUE/2));
+
+        tabs.setupWithViewPager(pager);
+
 
         //new FetchFromDatabase(this);
     }
@@ -32,18 +37,16 @@ public class MainActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int pos) {
-            pos = pos % 3;
-
-            switch(pos) {
-                case 0: return RoutesFragment.newInstance();
-                case 1: return ProfileFragment.newInstance();
-                case 2: return SettingsFragment.newInstance();
-                default: return null;
-            }
+            return RoutesFragment.newInstance(pos + 1);
         }
         @Override
         public int getCount(){
-            return Integer.MAX_VALUE;
+            return 3;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int pos){
+            return "Tab " + (pos + 1);
         }
     }
 }

@@ -29,5 +29,6 @@ dependencies {
     compile 'com.google.android.gms:play-services-appindexing:9.4.0+'
     compile 'com.google.android.gms:play-services-location:9.4.0+'
     compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.android.support:design:24.1.0'
     testCompile 'junit:junit:4.12'
 }

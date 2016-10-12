@@ -18,7 +18,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import static com.rulletrippen.rulletrippen.R.id.activity_main;
 
 /**
  * Created by Martin-PC on 2016-10-04.
