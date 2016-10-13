@@ -17,7 +17,7 @@ public class RoutesFragment extends Fragment {
 
     public static RoutesFragment newInstance() {
         RoutesFragment fragment = new RoutesFragment();
-        //new HttpDatabase.UpdateRoutes(fragment);
+        new HttpDatabase.UpdateRoutes(fragment);
         return fragment;
     }
 
