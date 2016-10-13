@@ -1,7 +1,179 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/darker_gray"
+    android:background="#FFF"
     tools:context="com.rulletrippen.rulletrippen.fragments.ProfileFragment">
-</FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:id="@+id/textpoint">
+
+        <TextView
+        android:text="Points:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textAllCaps="false"
+        tools:textSize="25sp"
+        android:textAlignment="gravity"
+        android:elevation="0dp"
+        android:layout_marginTop="15dp"
+        android:textSize="25sp" />
+
+        <TextView
+        android:text="500"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mypoints"
+        android:layout_marginTop="15dp"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:layout_marginLeft="8dp"
+        android:textSize="25sp"
+
+        />
+
+
+    </LinearLayout>
+    <View android:background="#000"
+        android:layout_width="match_parent"
+        android:layout_below="@id/mypoints"
+        android:layout_marginTop="50dp"
+        android:layout_height="2dp"
+        android:id="@+id/below1" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/savewindow"
+        android:orientation="vertical"
+        android:layout_below="@+id/GridLayout1">
+
+        <TextView
+            android:text="My Save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mysave"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textAllCaps="false"
+            tools:textSize="25sp"
+            android:textAlignment="gravity"
+            android:elevation="0dp"
+            android:layout_marginTop="15dp"
+            android:textSize="25sp" />
+
+
+    </LinearLayout>
+    <View android:background="#000"
+        android:layout_width="match_parent"
+        android:layout_below="@id/savewindow"
+        android:layout_marginTop="10dp"
+        android:layout_height="2dp"
+        android:id="@+id/below2" />
+
+    <GridLayout
+        android:id="@+id/GridLayout1"
+        android:layout_width="356dp"
+        android:layout_height="50dp"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:background="@drawable/route_border"
+        android:orientation="horizontal"
+        android:layout_alignTop="@+id/below1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp">
+
+
+        <TextView
+            android:text="TestRoute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/name" />
+
+        <TextView
+            android:text="35meter to start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:id="@+id/metersToStart" />
+
+        <TextView
+            android:text="Points: 1923"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/points" />
+
+        <TextView
+            android:text="ETA: 35min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:id="@+id/eta" />
+
+
+
+    </GridLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/routewindow"
+        android:orientation="vertical"
+        android:layout_below="@+id/below2">
+
+        <TextView
+            android:text="My Routes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/myroutes"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textAllCaps="false"
+            tools:textSize="25sp"
+            android:textAlignment="gravity"
+            android:elevation="0dp"
+            android:layout_marginTop="15dp"
+            android:textSize="25sp" />
+
+
+    </LinearLayout>
+    <View android:background="#000"
+        android:layout_width="match_parent"
+        android:layout_below="@id/routewindow"
+        android:layout_marginTop="10dp"
+        android:layout_height="2dp"
+        android:id="@+id/below3" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/commentwindow"
+        android:orientation="vertical"
+        android:layout_below="@+id/below3">
+        <TextView
+            android:text="My Comments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mycomment"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textAllCaps="false"
+            tools:textSize="25sp"
+            android:textAlignment="gravity"
+            android:elevation="0dp"
+            android:layout_marginTop="15dp"
+            android:textSize="25sp" />
+
+
+    </LinearLayout>
+    <View android:background="#000"
+        android:layout_width="match_parent"
+        android:layout_below="@id/commentwindow"
+        android:layout_marginTop="10dp"
+        android:layout_height="2dp"
+        android:id="@+id/below4" />
+</RelativeLayout>
+
+
+
