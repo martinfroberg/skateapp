@@ -82,55 +82,48 @@ public class HttpDatabase  {
 
         @Override
         protected void onPostExecute(String result) {
+
             LinearLayout routesLayout = (LinearLayout) routesFragment.getView().findViewById(R.id.routesLayout);
+            ViewGroup.LayoutParams wC = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            ViewGroup.LayoutParams mP = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+
+
             try {
                 JSONObject json = new JSONObject(result);
                 if (json != null){
-
                     //Create gridlayout
 
                     GridLayout grid = new GridLayout(routesFragment.getContext());
-                    /*grid.setColumnCount(2);
-                    grid.setRowCount(2);*/
+                    grid.setColumnCount(2);
+                    grid.setRowCount(2);
                     grid.setBackgroundResource(R.drawable.route_border);
-                    //grid.setOrientation(GridLayout.HORIZONTAL);
-                    /*ViewGroup.LayoutParams lP = grid.getLayoutParams();
-                    lP.height = ViewGroup.LayoutParams.MATCH_PARENT;
-                    lP.width = ViewGroup.LayoutParams.MATCH_PARENT;
-                    grid.setLayoutParams(lP);*/
+                    grid.setOrientation(GridLayout.HORIZONTAL);
+                    grid.setLayoutParams(mP);
                     routesLayout.addView(grid);
 
-
-                    /*TextView tVName = new TextView(routesFragment.getContext());
-                    tVName.setWidth(GridLayout.LayoutParams.WRAP_CONTENT);
-                    tVName.setHeight(GridLayout.LayoutParams.WRAP_CONTENT);
+                    TextView tVName = new TextView(routesFragment.getContext());
+                    tVName.setLayoutParams(wC);
                     tVName.setText(json.getString("title"));
                     grid.addView(tVName);
 
                     TextView tVETA = new TextView(routesFragment.getContext());
-                    tVETA.setWidth(GridLayout.LayoutParams.WRAP_CONTENT);
-                    tVETA.setHeight(GridLayout.LayoutParams.WRAP_CONTENT);
+                    tVETA.setLayoutParams(wC);
                     tVETA.setGravity(Gravity.END);
                     //TODO Eta calculations
                     tVETA.setText("14min");
                     grid.addView(tVETA);
 
                     TextView tVPoints = new TextView(routesFragment.getContext());
-                    tVPoints.setWidth(GridLayout.LayoutParams.WRAP_CONTENT);
-                    tVPoints.setHeight(GridLayout.LayoutParams.WRAP_CONTENT);
+                    tVPoints.setLayoutParams(wC);
                     tVPoints.setText(json.getString("points"));
                     grid.addView(tVPoints);
 
                     TextView tVMetersToStart = new TextView(routesFragment.getContext());
-                    tVMetersToStart.setWidth(GridLayout.LayoutParams.WRAP_CONTENT);
-                    tVMetersToStart.setHeight(GridLayout.LayoutParams.WRAP_CONTENT);
+                    tVMetersToStart.setLayoutParams(wC);
                     tVMetersToStart.setGravity(Gravity.END);
                     //TODO Eta calculations
                     tVMetersToStart.setText("17m");
-                    grid.addView(tVMetersToStart);*/
-
-
-
+                    grid.addView(tVMetersToStart);
 
                 }
             } catch (JSONException e){
